@@ -1,0 +1,21 @@
+<mujocoinclude>
+  <freejoint name="milk_joint"/>
+  <geom mesh="ImageToStl.com_milk_0" material="milk-mat1" class="object_visual"/>
+  <geom mesh="ImageToStl.com_milk_1" material="milk-mat0" class="object_visual"/>
+  <!-- <body name="milk_contact">
+    <geom mesh="ImageToStl.com_milk_collision_0" rgba="0.49439684559536723 0.6506498477767861 0.29114381688863245 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_1" rgba="0.29168003913956486 0.3739843347130565 0.38792360411251203 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_2" rgba="0.9754715960737705 0.36479800613986146 0.34321486963771564 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_3" rgba="0.0262704014014834 0.9845142120274147 0.11421342356703534 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_4" rgba="0.38285862956961036 0.9219543458652026 0.21649390181525452 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_5" rgba="0.9259008332929888 0.3486672778250929 0.3249056846563628 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_6" rgba="0.9792684282533249 0.7049763415501326 0.6653913335087583 1" class="object_collision"/>
+    <geom mesh="ImageToStl.com_milk_collision_7" rgba="0.30257514866593416 0.5092059729294931 0.17005282208628258 1" class="object_collision"/>
+  </body> -->
+  <geom name="milk_contact" type="box" pos="0 0 -0.01" size="0.035 0.035 0.09" class='object_collision'/>
+  <body name="milk_top" pos="0 0 0.15" />
+  <site name="milk_top" pos="0 0 0.17" class="site_top"/>
+  <site name="milk_left" pos="-0.06 0 0.06" class="site_left"/> 
+  <site name="milk_right" pos="0.06 0 0.06" class="site_right"/>
+  <site name="milk_bottom" pos="0 0 -0.12" class="site_bottom"/> 
+</mujocoinclude>

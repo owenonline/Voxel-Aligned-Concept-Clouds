@@ -1,0 +1,14 @@
+<mujocoinclude>
+  <freejoint name="bread_joint"/>
+  <geom material="bread-mat0" mesh="ImageToStl.com_bread" class="object_visual"/>
+  <!-- <geom mesh="ImageToStl.com_bread_collision_0" rgba="0.6595945710906026 0.7162531797823055 0.18631234203767733 1" class="object_collision"/>
+  <geom mesh="ImageToStl.com_bread_collision_1" rgba="0.6178060926703501 0.6828071162549297 0.1470230308501006 1" class="object_collision"/> -->
+  <geom name="bread_contact" type="box" rgba="1 0 0 0" size="0.044 0.058 0.042" density="1000"/> 
+  <site name="bread_top" pos="0 0 0.07" type="cylinder" rgba='1 1 0 1' size="0.01 0.005" quat="1 0 0 1"/>
+  <body name="bread_top" pos="0 0 0.04" quat="1 0 0 1" />
+  <site name="bread_bottom" pos="0 0 -0.06" class="site_bottom"/> 
+  <site name="bread_front" pos="0 -0.05 0" class="site_front"/> 
+  <site name="bread_back" pos="0 0.05 0" class="site_back"/>  
+  <site name="bread_left" pos="-0.06 0 -0.01" class="site_left"/> 
+  <site name="bread_right" pos="0.06 0 -0.01" class="site_right"/>
+</mujocoinclude>
