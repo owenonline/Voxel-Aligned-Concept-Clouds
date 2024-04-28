@@ -110,44 +110,18 @@
       <geom name="banana_contact4" type="mesh" class="object_collision" mesh="banana_contact4" />
     </body>
 
-    <!-- <body name="milk" pos="-0.6 0.4 0.3">
-      <freejoint name="milk_joint"/>
-      <camera mode="trackcom" name='milk' pos="0.000 0.230 0.240" xyaxes="-0.000 0.656 -0.755 -1.000 -0.000 0.000"/>
-      <geom mesh="milk_mesh" material="milk-mat" class="object_visual"/>
-      <geom name="milk_contact" type="box" pos="0 0 -0.01" size="0.035 0.035 0.09" class='object_collision'/>
-      <geom name="milk_contact0" type="mesh" material="milk-mat" mesh="milk_mesh" class='object_collision'/>
-      <body name="milk_top" pos="0 0 0.15" />
-      <site name="milk_top" pos="0 0 0.17" class="site_top"/>
-      <site name="milk_left" pos="-0.06 0 0.06" class="site_left"/> 
-      <site name="milk_right" pos="0.06 0 0.06" class="site_right"/>
-      <site name="milk_bottom" pos="0 0 -0.12" class="site_bottom"/> 
-    </body> -->
     <body name="milk" pos="-0.6 0.4 0.3">
       <include file="assets/objects/milk.xml"/>
       <camera mode="trackcom" name='milk' pos="0.000 0.230 0.240" xyaxes="-0.000 0.656 -0.755 -1.000 -0.000 0.000"/>
     </body>
 
-    <!-- <geom name="breadbox" pos="-0.7 0.6 0.2" size="0.05 0.05 0.05" type="box" conaffinity="0" contype="0"  group="1" mass="0" rgba="0 255 0 1" /> -->
-    <!-- <body name="bread" pos="-0.7 0.6 0.2">
-      <freejoint name="bread_joint"/>
-      <camera mode="trackcom" name='bread' pos="0.000 -0.200 0.100" xyaxes="0.000 -0.447 -0.894 1.000 -0.000 0.000"/>
-      <geom mesh="bread_mesh" type="mesh" material="bread"  class="object_visual"/> 
-      <geom name="bread_contact" type="box" rgba="1 0 0 0" size="0.044 0.058 0.042" density="1000"/> 
-      
-      <site name="bread_top" pos="0 0 0.07" type="cylinder" rgba='1 1 0 1' size="0.01 0.005" quat="1 0 0 1"/>
-      <body name="bread_top" pos="0 0 0.04" quat="1 0 0 1" />
-
-      <site name="bread_bottom" pos="0 0 -0.06" class="site_bottom"/> 
-      <site name="bread_front" pos="0 -0.05 0" class="site_front"/> 
-      <site name="bread_back" pos="0 0.05 0" class="site_back"/>  
-      <site name="bread_left" pos="-0.06 0 -0.01" class="site_left"/> 
-      <site name="bread_right" pos="0.06 0 -0.01" class="site_right"/>
-    </body>  -->
     <camera mode="targetbodycom" target="apple"         name='genpurp__1' pos="-0.7 0.6 0.4"/>
     <camera mode="targetbodycom" target="ur5e_robotiq" name='genpurp__2' pos="-0.7 0.6 0.4"/>
     <camera mode="targetbodycom" target="panda"       name='genpurp__3' pos="-0.7 0.6 0.4"/>
     <camera mode="targetbodycom" target="banana"     name='genpurp__4' pos="-0.7 0.6 0.4"/>
     <camera mode="targetbodycom" target="bin"       name='genpurp__5' pos="-0.7 0.6 0.4"/>
+    <camera mode="targetbodycom" target="table"       name='genpurp__6' pos="-0.7 0.6 2"/>
+    <camera mode="targetbodycom" target="apple"       name='genpurp__7' pos="-0.7 0.6 2"/>
 
     <body name="bread" pos="-0.7 0.6 0.2">
       <include file="assets/objects/bread.xml"/>
