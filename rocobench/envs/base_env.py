@@ -539,6 +539,8 @@ class MujocoSimEnv:
                     # get the image from the camera
                     rgb_image = rgb.astype('uint8')#Image.fromarray(rgb.astype('uint8'), "RGB")
                     rgb_image = cv2.rotate(rgb_image, cv2.ROTATE_90_CLOCKWISE)
+                    depth_image = depth.astype('uint8')#Image.fromarray(depth.astype('uint8'), "RGB")
+                    depth_image = cv2.rotate(depth_image, cv2.ROTATE_90_CLOCKWISE)
 
                     # undistort the image, since the scene camera uses an extra wide field of view to capture everything in the scene
                     if cam_name == "sceneshot":
@@ -577,7 +579,8 @@ class MujocoSimEnv:
                         rot_mat=cam_rotmat,
                         fov=float(cam.fovy[0]),
                         segmentation=segmentation_points
-                    ), rgb_image)
+                    ), rgb_image,
+                    depth_image)
                     break   
 
                 except mujocoFatalError as e:

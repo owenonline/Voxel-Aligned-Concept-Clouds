@@ -159,6 +159,16 @@
     <camera name='video' pos="1.957 -0.281 1.731" xyaxes="0.487 0.874 0.000 -0.500 0.278 0.820"/>
 
     <camera mode="fixed" name='sceneshotcam' pos="-1.000 0.500 0.700" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000" fovy="90"/>
+    <camera mode="fixed" name="corner_cam1" pos="2 2 2" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="corner_cam2" pos="-2 2 2" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="corner_cam3" pos="2 -2 2" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="corner_cam4" pos="-2 -2 2" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="center_top_cam" pos="0 0 3" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="overview_cam" pos="0 0 5" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="side_cam1" pos="3 0 1" xyaxes="0 1 0 -1 0 0"/>
+    <camera mode="fixed" name="side_cam2" pos="-3 0 1" xyaxes="0 -1 0 1 0 0"/>
+    <camera mode="fixed" name="front_cam" pos="0 3 1" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="back_cam" pos="0 -3 1" xyaxes="-1 0 0 0 -1 0"/>
 
   </worldbody> 
 
