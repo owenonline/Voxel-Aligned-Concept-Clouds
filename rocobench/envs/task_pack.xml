@@ -19,6 +19,13 @@
   <worldbody>
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" pos="0 0 -0.5" size="0 0 0.05" type="plane" material="grass"/>
+
+    <geom name="wall1" pos="0 3 0" size="2 0.05 2" type="box" material="light-wood"/>
+    <geom name="wall2" pos="0 -2 0" size="2 0.05 2" type="box" material="light-wood"/>
+    <geom name="wall3" pos="2 0 0" size="0.05 3 2" type="box" material="light-wood"/>
+    <geom name="wall4" pos="-2 0 0" size="0.05 3 2" type="box" material="light-wood"/>
+    <geom name="ceiling" pos="0 0 2" size="2 3 0.05" type="box" material="light-wood"/>
+
     <!-- groundplane -->
     <!-- adding a table box -->
     <body name="table" pos="0 0.5 0">
@@ -158,17 +165,255 @@
     <camera name="teaser" pos="2.675 -0.747 1.997" xyaxes="0.496 0.869 -0.000 -0.429 0.245 0.869"/>
     <camera name='video' pos="1.957 -0.281 1.731" xyaxes="0.487 0.874 0.000 -0.500 0.278 0.820"/>
 
-    <camera mode="fixed" name='sceneshotcam' pos="-1.000 0.500 0.700" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000" fovy="90"/>
+    <camera mode="fixed" name='sceneshotcam' pos="-1.000 0.500 0.700" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
     <camera mode="fixed" name="corner_cam1" pos="2 2 2" xyaxes="1 0 0 0 1 0"/>
     <camera mode="fixed" name="corner_cam2" pos="-2 2 2" xyaxes="1 0 0 0 1 0"/>
     <camera mode="fixed" name="corner_cam3" pos="2 -2 2" xyaxes="1 0 0 0 1 0"/>
     <camera mode="fixed" name="corner_cam4" pos="-2 -2 2" xyaxes="1 0 0 0 1 0"/>
-    <camera mode="fixed" name="center_top_cam" pos="0 0 3" xyaxes="1 0 0 0 1 0"/>
+    <camera mode="fixed" name="center_top_cam" pos="0 0 1.9" xyaxes="1 0 0 0 1 0"/>
     <camera mode="fixed" name="overview_cam" pos="0 0 5" xyaxes="1 0 0 0 1 0"/>
     <camera mode="fixed" name="side_cam1" pos="3 0 1" xyaxes="0 1 0 -1 0 0"/>
     <camera mode="fixed" name="side_cam2" pos="-3 0 1" xyaxes="0 -1 0 1 0 0"/>
     <camera mode="fixed" name="front_cam" pos="0 3 1" xyaxes="1 0 0 0 1 0"/>
     <camera mode="fixed" name="back_cam" pos="0 -3 1" xyaxes="-1 0 0 0 -1 0"/>
+
+    <camera mode="fixed" name='rotcam0' pos="-1.000 0.500 0.725" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam1' pos="-1.000 0.500 0.720" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam2' pos="-1.000 0.500 0.715" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam3' pos="-1.000 0.500 0.710" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam4' pos="-1.000 0.500 0.705" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam5' pos="-1.000 0.500 0.700" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam6' pos="-1.000 0.500 0.695" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam7' pos="-1.000 0.500 0.690" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam8' pos="-1.000 0.500 0.685" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam9' pos="-1.000 0.500 0.680" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam10' pos="-1.000 0.500 0.675" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam11' pos="-1.000 0.500 0.670" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam12' pos="-1.000 0.500 0.665" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam13' pos="-1.000 0.500 0.660" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam14' pos="-1.000 0.500 0.655" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam15' pos="-1.000 0.500 0.650" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam16' pos="-1.000 0.500 0.645" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam17' pos="-1.000 0.500 0.640" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam18' pos="-1.000 0.500 0.635" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam19' pos="-1.000 0.500 0.630" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam20' pos="-1.000 0.500 0.625" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam21' pos="-1.000 0.500 0.620" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam22' pos="-1.000 0.500 0.615" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam23' pos="-1.000 0.500 0.610" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam24' pos="-1.000 0.500 0.605" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam25' pos="-1.000 0.500 0.600" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam26' pos="-1.000 0.500 0.595" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam27' pos="-1.000 0.500 0.590" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam28' pos="-1.000 0.500 0.585" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam29' pos="-1.000 0.500 0.580" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam30' pos="-1.000 0.500 0.575" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam31' pos="-1.000 0.500 0.570" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam32' pos="-1.000 0.500 0.565" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam33' pos="-1.000 0.500 0.560" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam34' pos="-1.000 0.500 0.555" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam35' pos="-1.000 0.500 0.550" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam36' pos="-1.000 0.500 0.545" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam37' pos="-1.000 0.500 0.540" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam38' pos="-1.000 0.500 0.535" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam39' pos="-1.000 0.500 0.530" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam40' pos="-1.000 0.500 0.525" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam41' pos="-1.000 0.500 0.520" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam42' pos="-1.000 0.500 0.515" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam43' pos="-1.000 0.500 0.510" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam44' pos="-1.000 0.500 0.505" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam45' pos="-1.000 0.500 0.500" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam46' pos="-1.000 0.500 0.495" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam47' pos="-1.000 0.500 0.490" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam48' pos="-1.000 0.500 0.485" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam49' pos="-1.000 0.500 0.480" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam50' pos="-1.000 0.500 0.475" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam51' pos="-1.000 0.500 0.470" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam52' pos="-1.000 0.500 0.465" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam53' pos="-1.000 0.500 0.460" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam54' pos="-1.000 0.500 0.455" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam55' pos="-1.000 0.500 0.450" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam56' pos="-1.000 0.500 0.445" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam57' pos="-1.000 0.500 0.440" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam58' pos="-1.000 0.500 0.435" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam59' pos="-1.000 0.500 0.430" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam60' pos="-1.000 0.500 0.425" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam61' pos="-1.000 0.500 0.420" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam62' pos="-1.000 0.500 0.415" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam63' pos="-1.000 0.500 0.410" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam64' pos="-1.000 0.500 0.405" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam65' pos="-1.000 0.500 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam66' pos="-1.000 0.475 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam67' pos="-1.000 0.470 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam68' pos="-1.000 0.465 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam69' pos="-1.000 0.460 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam70' pos="-1.000 0.455 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam71' pos="-1.000 0.450 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam72' pos="-1.000 0.445 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam73' pos="-1.000 0.440 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam74' pos="-1.000 0.435 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam75' pos="-1.000 0.430 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam76' pos="-1.000 0.425 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam77' pos="-1.000 0.420 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam78' pos="-1.000 0.415 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam79' pos="-1.000 0.410 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam80' pos="-1.000 0.405 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam81' pos="-1.000 0.400 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam82' pos="-1.000 0.395 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam83' pos="-1.000 0.390 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam84' pos="-1.000 0.385 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam85' pos="-1.000 0.380 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam86' pos="-1.000 0.375 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam87' pos="-1.000 0.370 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam88' pos="-1.000 0.365 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam89' pos="-1.000 0.360 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam90' pos="-1.000 0.355 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam91' pos="-1.000 0.350 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam92' pos="-1.000 0.345 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam93' pos="-1.000 0.340 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam94' pos="-1.000 0.335 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam95' pos="-1.000 0.330 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam96' pos="-1.000 0.325 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam97' pos="-1.000 0.320 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam98' pos="-1.000 0.315 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam99' pos="-1.000 0.310 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam100' pos="-1.000 0.305 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam101' pos="-1.000 0.300 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam102' pos="-1.000 0.295 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam103' pos="-1.000 0.290 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam104' pos="-1.000 0.285 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam105' pos="-1.000 0.280 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam106' pos="-1.000 0.275 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam107' pos="-1.000 0.270 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam108' pos="-1.000 0.265 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam109' pos="-1.000 0.260 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam110' pos="-1.000 0.255 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam111' pos="-1.000 0.250 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam112' pos="-1.000 0.245 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam113' pos="-1.000 0.240 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam114' pos="-1.000 0.235 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam115' pos="-1.000 0.230 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam116' pos="-1.000 0.225 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam117' pos="-1.000 0.220 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam118' pos="-1.000 0.215 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam119' pos="-1.000 0.210 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam120' pos="-1.000 0.205 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam121' pos="-1.000 0.200 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam122' pos="-1.000 0.195 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam123' pos="-1.000 0.190 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam124' pos="-1.000 0.185 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam125' pos="-1.000 0.180 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam126' pos="-1.000 0.175 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam127' pos="-1.000 0.170 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam128' pos="-1.000 0.165 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam129' pos="-1.000 0.160 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam130' pos="-1.000 0.155 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam131' pos="-1.000 0.150 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam132' pos="-1.000 0.145 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam133' pos="-1.000 0.140 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam134' pos="-1.000 0.135 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam135' pos="-1.000 0.130 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam136' pos="-1.000 0.125 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam137' pos="-1.000 0.120 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam138' pos="-1.000 0.115 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam139' pos="-1.000 0.110 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam140' pos="-1.000 0.105 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam141' pos="-1.000 0.100 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam142' pos="-1.000 0.525 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam143' pos="-1.000 0.530 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam144' pos="-1.000 0.535 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam145' pos="-1.000 0.540 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam146' pos="-1.000 0.545 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam147' pos="-1.000 0.550 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam148' pos="-1.000 0.555 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam149' pos="-1.000 0.560 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam150' pos="-1.000 0.565 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam151' pos="-1.000 0.570 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam152' pos="-1.000 0.575 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam153' pos="-1.000 0.580 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam154' pos="-1.000 0.585 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam155' pos="-1.000 0.590 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam156' pos="-1.000 0.595 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam157' pos="-1.000 0.600 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam158' pos="-1.000 0.605 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam159' pos="-1.000 0.610 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam160' pos="-1.000 0.615 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam161' pos="-1.000 0.620 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam162' pos="-1.000 0.625 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam163' pos="-1.000 0.630 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam164' pos="-1.000 0.635 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam165' pos="-1.000 0.640 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam166' pos="-1.000 0.645 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam167' pos="-1.000 0.650 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam168' pos="-1.000 0.655 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam169' pos="-1.000 0.660 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam170' pos="-1.000 0.665 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam171' pos="-1.000 0.670 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam172' pos="-1.000 0.675 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam173' pos="-1.000 0.680 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam174' pos="-1.000 0.685 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam175' pos="-1.000 0.690 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam176' pos="-1.000 0.695 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam177' pos="-1.000 0.700 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam178' pos="-1.000 0.705 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam179' pos="-1.000 0.710 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam180' pos="-1.000 0.715 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam181' pos="-1.000 0.720 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam182' pos="-1.000 0.725 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam183' pos="-1.000 0.730 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam184' pos="-1.000 0.735 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam185' pos="-1.000 0.740 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam186' pos="-1.000 0.745 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam187' pos="-1.000 0.750 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam188' pos="-1.000 0.755 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam189' pos="-1.000 0.760 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam190' pos="-1.000 0.765 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam191' pos="-1.000 0.770 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam192' pos="-1.000 0.775 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam193' pos="-1.000 0.780 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam194' pos="-1.000 0.785 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam195' pos="-1.000 0.790 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam196' pos="-1.000 0.795 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam197' pos="-1.000 0.800 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam198' pos="-1.000 0.805 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam199' pos="-1.000 0.810 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam200' pos="-1.000 0.815 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam201' pos="-1.000 0.820 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam202' pos="-1.000 0.825 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam203' pos="-1.000 0.830 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam204' pos="-1.000 0.835 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam205' pos="-1.000 0.840 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam206' pos="-1.000 0.845 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam207' pos="-1.000 0.850 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam208' pos="-1.000 0.855 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam209' pos="-1.000 0.860 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam210' pos="-1.000 0.865 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam211' pos="-1.000 0.870 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam212' pos="-1.000 0.875 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam213' pos="-1.000 0.880 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam214' pos="-1.000 0.885 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam215' pos="-1.000 0.890 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam216' pos="-1.000 0.895 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam217' pos="-1.000 0.900 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam218' pos="-1.000 0.905 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam219' pos="-1.000 0.910 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam220' pos="-1.000 0.915 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam221' pos="-1.000 0.920 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam222' pos="-1.000 0.925 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam223' pos="-1.000 0.930 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam224' pos="-1.000 0.935 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam225' pos="-1.000 0.940 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam226' pos="-1.000 0.945 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam227' pos="-1.000 0.950 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam228' pos="-1.000 0.955 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam229' pos="-1.000 0.960 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam230' pos="-1.000 0.965 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam231' pos="-1.000 0.970 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam232' pos="-1.000 0.975 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam233' pos="-1.000 0.980 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam234' pos="-1.000 0.985 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam235' pos="-1.000 0.990 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
+    <camera mode="fixed" name='rotcam236' pos="-1.000 0.995 0.400" xyaxes="-0.482 -0.000 -0.876 0.000 -1.000 0.000"/>
 
   </worldbody> 
 

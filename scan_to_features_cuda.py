@@ -342,7 +342,7 @@ def blip_sam(save_dir_path, scene_dir_path, mask_dir_path):
         torch.save(outfeat, SEMIGLOBAL_FEAT_SAVE_FILE)
 
 def fuse_features(save_dir, outputs, multiview_feat_dir):
-    slam = PointFusion(odom="icp", dsratio=1, device="cuda", use_embeddings=True)
+    slam = PointFusion(odom="gt", dsratio=1, device="cuda", use_embeddings=True)
 
     frame_cur, frame_prev = None, None
     pointclouds = Pointclouds(
@@ -365,7 +365,7 @@ def fuse_features(save_dir, outputs, multiview_feat_dir):
 
         _color = rgb_image.float().cuda()  # Move color to CUDA
         _depth = depth_image.float().unsqueeze(-1).cuda()  # Move depth to CUDA
-        # _pose = torch.from_numpy(outputs[file][3]).float().cuda()  # Move pose to CUDA
+        _pose = torch.from_numpy(outputs[file][3]).float().cuda()  # Move pose to CUDA
 
         _embedding = torch.load(os.path.join(multiview_feat_dir, f"{file}_rgb.pt"))
         _embedding = _embedding.float().cuda()  # Move embedding to CUDA right after load
@@ -380,7 +380,7 @@ def fuse_features(save_dir, outputs, multiview_feat_dir):
             _color.unsqueeze(0).unsqueeze(0).cuda(),
             _depth.unsqueeze(0).unsqueeze(0).cuda(),
             intrinsics.unsqueeze(0).unsqueeze(0).cuda(),
-            # _pose.unsqueeze(0).unsqueeze(0),
+            _pose.unsqueeze(0).unsqueeze(0),
             embeddings=_embedding.unsqueeze(0).unsqueeze(0).cuda(),
         )
         
@@ -405,15 +405,15 @@ def main():
         outputs = pickle.load(f)
 
     mask_dir = os.path.join(os.getcwd(), "sam_masks")
-    # os.makedirs(mask_dir, exist_ok=True)
-    # create_masks(mask_dir, outputs)
+    os.makedirs(mask_dir, exist_ok=True)
+    create_masks(mask_dir, outputs)
 
     multiview_feat_dir = os.path.join(os.getcwd(), "multiview_features")
-    # os.makedirs(multiview_feat_dir, exist_ok=True)
-    # clip_start = time()
-    # clip_sam(multiview_feat_dir, mask_dir, outputs)
-    # clip_end = time()
-    # print(f"clip time: {clip_end - clip_start}")
+    os.makedirs(multiview_feat_dir, exist_ok=True)
+    clip_start = time()
+    clip_sam(multiview_feat_dir, mask_dir, outputs)
+    clip_end = time()
+    print(f"clip time: {clip_end - clip_start}")
 
     fused_3d_feat_dir = os.path.join(os.getcwd(), "fused_3d_features")
     os.makedirs(fused_3d_feat_dir, exist_ok=True)

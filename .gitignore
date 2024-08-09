@@ -1,0 +1,7 @@
+*.ply
+*.pt
+*.png
+*.pkl
+simulator_dataset/
+figure_data/
+feature_pictures/

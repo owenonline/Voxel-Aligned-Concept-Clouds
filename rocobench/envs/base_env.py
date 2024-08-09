@@ -509,6 +509,7 @@ class MujocoSimEnv:
 
     def render_feature_cameras(self, max_retries: int = 100):
         outputs = {}
+        # self.physics.model.vis.map_.znear = 0.005
         for cam_name in self.point_feature_cameras:
             cam = self.physics.model.camera(cam_name)
             cam_data = self.physics.data.camera(cam_name)
